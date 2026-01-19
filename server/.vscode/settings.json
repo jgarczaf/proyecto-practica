@@ -1,0 +1,10 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // Si quieres forzar LF:
+  // "files.eol": "\n",
+
+  // Si prefieres que se adapte al archivo/SO:
+  "files.eol": "auto"
+}

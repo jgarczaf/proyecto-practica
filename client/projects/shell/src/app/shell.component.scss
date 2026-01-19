@@ -1,0 +1,54 @@
+/* ---------- Angular Material Theme (Rojo corporativo) ---------- */
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+/* Paletas */
+$primary: mat.define-palette(mat.$red-palette, 600, 500, 800);
+$accent: mat.define-palette(mat.$grey-palette, 600);
+$warn: mat.define-palette(mat.$red-palette);
+
+/* Tema */
+$mf-theme: mat.define-theme(
+  (
+    color: (
+      primary: $primary,
+      tertiary: $accent,
+      warn: $warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+/* Aplica tema a todos los componentes Material */
+@include mat.all-component-themes($mf-theme);
+
+/* ---------- Extras de diseño (utilidades ligeras) ---------- */
+:root {
+  --card-radius: 16px;
+}
+
+html,
+body {
+  height: 100%;
+  background: #f7f9fb;
+}
+
+/* contenedor responsivo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 12px;
+}
+
+mat-card {
+  border-radius: var(--card-radius);
+}
