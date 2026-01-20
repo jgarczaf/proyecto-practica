@@ -1,0 +1,54 @@
+@use "@angular/material" as mat;
+
+// 1) Incluye core
+@include mat.core();
+
+// 2) Paletas legacy (IMPORTANTE)
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$warn: mat.define-palette(mat.$red-palette);
+
+// 3) Tema legacy
+$mf-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// 4) Aplica el tema a todos los componentes
+@include mat.all-component-themes($mf-theme);
+
+// (Opcional) tus tokens CSS
+:root {
+  --card-radius: 16px;
+}
+
+html,
+body {
+  height: 100%;
+  background: #f7f9fb;
+}
+
+/* contenedor responsivo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 12px;
+}
+
+mat-card {
+  border-radius: var(--card-radius);
+}

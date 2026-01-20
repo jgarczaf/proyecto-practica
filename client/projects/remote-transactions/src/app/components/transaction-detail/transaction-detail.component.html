@@ -27,10 +27,10 @@
         <mat-form-field appearance="outline">
           <mat-label>Tipo</mat-label>
           <mat-select formControlName="tipo">
-            <mat-option>Transferencia</mat-option>
-            <mat-option>Pago</mat-option>
-            <mat-option>Domiciliación</mat-option>
-            <mat-option>Inversión</mat-option>
+            <mat-option [value]="'Transferencia'">Transferencia</mat-option>
+            <mat-option [value]="'Pago'">Pago</mat-option>
+            <mat-option [value]="'Domiciliación'">Domiciliación</mat-option>
+            <mat-option [value]="'Inversión'">Inversión</mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -42,10 +42,10 @@
         <mat-form-field appearance="outline">
           <mat-label>Estado</mat-label>
           <mat-select formControlName="estado">
-            <mat-option>Pendiente</mat-option>
-            <mat-option>Completado</mat-option>
-            <mat-option>Procesando</mat-option>
-            <mat-option>Fallido</mat-option>
+            <mat-option [value]="'Pendiente'">Pendiente</mat-option>
+            <mat-option [value]="'Completado'">Completado</mat-option>
+            <mat-option [value]="'Procesando'">Procesando</mat-option>
+            <mat-option [value]="'Fallido'">Fallido</mat-option>
           </mat-select>
         </mat-form-field>
 
